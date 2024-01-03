@@ -11,7 +11,7 @@ const App = () => (
     <Route exact path="/books" component={Books} />
     <Route exact path="/contact" component={Contact} />
     <Route exact path="/cart" component={TGames} />
-    <Route exact path="/not-found" component={NotFound} />
+    {/* <Route exact path="/not-found" component={NotFound} /> */}
     <Redirect to="/not-found" />
   </Switch>
 );
