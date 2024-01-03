@@ -20,6 +20,7 @@ class Books extends Component {
       <div>
         <Header />
         <p>Get books API</p>
+        <p>Books will be displayed here...</p>
       </div>
     );
   }
