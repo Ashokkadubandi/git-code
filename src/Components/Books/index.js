@@ -1,5 +1,6 @@
 import { Component } from "react";
 import Header from "../Header";
+import Sample from "../../context/global";
 import "./index.css";
 
 class Books extends Component {
@@ -10,17 +11,35 @@ class Books extends Component {
   }
 
   renderBooksData = (data) => {
-    console.log(data);
-    const { title, price, subtitle, image, isbn13 } = data;
+    const { title, price, image, isbn13 } = data;
     return (
-      <li className="book-list">
-        <img src={image} alt="img-gen" className="image" />
-        <p className="title">{title}</p>
-        <p className="price">{price}</p>
-        <button type="button" className="add-cart-btn">
-          Add to cart
-        </button>
-      </li>
+      <Sample.Consumer>
+        {(value) => {
+          const { updateAddCart, cart } = value;
+          const checking = cart.find((each) => each.isbn13 === data.isbn13);
+          const addCartItem = () => {
+            console.log(checking);
+            if (checking === undefined) {
+              updateAddCart(data);
+            }
+          };
+
+          return (
+            <li className="book-list" key={isbn13}>
+              <img src={image} alt="img-gen" className="image" />
+              <p className="title">{title}</p>
+              <p className="price">{price}</p>
+              <button
+                type="button"
+                className="add-cart-btn"
+                onClick={addCartItem}
+              >
+                {checking === undefined ? "Add to cart" : "Added"}
+              </button>
+            </li>
+          );
+        }}
+      </Sample.Consumer>
     );
   };
 
@@ -35,7 +54,6 @@ class Books extends Component {
   };
   render() {
     const { booksData } = this.state;
-    console.log(booksData);
     return (
       <div>
         <Header />
