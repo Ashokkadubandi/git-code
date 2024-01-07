@@ -10,7 +10,9 @@ class Cart extends Component {
       <Sample.Consumer>
         {(value) => {
           const { cart } = value;
-          console.log(cart);
+          {
+            /* console.log(cart); */
+          }
 
           return (
             <>
