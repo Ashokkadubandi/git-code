@@ -1,3 +1,7 @@
+.bottom-container {
+  height: 100vh;
+  overflow: scroll;
+}
 .books-container {
   display: flex;
   flex-wrap: wrap;

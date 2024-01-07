@@ -57,10 +57,12 @@ class Books extends Component {
     return (
       <div>
         <Header />
-        <p className="text-anim">Get your books and feel free to read</p>
-        <ul className="books-container">
-          {booksData.map((each) => this.renderBooksData(each))}
-        </ul>
+        <div className="bottom-container">
+          <p className="text-anim">Get your books and feel free to read</p>
+          <ul className="books-container">
+            {booksData.map((each) => this.renderBooksData(each))}
+          </ul>
+        </div>
       </div>
     );
   }
