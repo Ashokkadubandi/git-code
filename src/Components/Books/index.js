@@ -27,8 +27,8 @@ class Books extends Component {
           return (
             <li className="book-list" key={isbn13}>
               <img src={image} alt="img-gen" className="image" />
-              <p className="title">{title}</p>
-              <p className="price">{price}</p>
+              <p className="title_product">{title}</p>
+              <p className="price_product">{price}</p>
               <button
                 type="button"
                 className="add-cart-btn"
@@ -57,7 +57,7 @@ class Books extends Component {
     return (
       <div>
         <Header />
-        <p>Get books API</p>
+        <p className="text-anim">Get your books and feel free to read</p>
         <ul className="books-container">
           {booksData.map((each) => this.renderBooksData(each))}
         </ul>

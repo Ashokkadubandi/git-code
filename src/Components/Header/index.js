@@ -14,15 +14,15 @@ class Header extends Component {
     return (
       <div className="nav-items-container">
         <ul className="nav-items">
-          <li className="mobile-links">Books</li>
-          <li className="mobile-links">Toys and Games</li>
-          <li className="mobile=links">Contact</li>
-          <li className="mobile-links">Books</li>
-          <li className="mobile-links">Toys and Games</li>
-          <li className="mobile=links">Contact</li>
-          <li className="mobile-links">Books</li>
-          <li className="mobile-links">Toys and Games</li>
-          <li className="mobile=links">Contact</li>
+          <Link to="/books" className="link">
+            <li className="mobile-links">Books</li>
+          </Link>
+          <Link to="/cart" className="link">
+            <li className="mobile-links">Cart</li>
+          </Link>
+          <Link to="/contact" className="link">
+            <li className="mobile-links">Contact</li>
+          </Link>
         </ul>
         <p onClick={this.triggerNavItems}>
           <FaTimes />
